@@ -1,0 +1,171 @@
+﻿数据库连接方式:
+	数据库版本：SQLServer2008
+	数据库IP：114.80.116.56
+	登陆方式：SQLServer身份认证
+	登录名：brqy
+	登录密码：brqy
+具体内容如下（如果与之前的excel有冲突，已下面的实际表为准）：
+
+基础资料表：
+	1----大区表
+	SELECT [id]				--id
+		  ,[name]			--名称
+	  FROM [hrchannel_data].[dbo].[t_area]
+
+	2---省份表
+	SELECT [id]				--id
+		  ,[name]			--名称
+		  ,[areaid]			--大区
+	  FROM [hrchannel_data].[dbo].[t_province]
+
+
+	3----城市表
+	SELECT [id]				--id
+		  ,[name]			--名称
+		  ,[provinceid]			--省份
+	  FROM [hrchannel_data].[dbo].[t_city]
+
+	4---社保类型
+	 SELECT [id]			--id
+		  ,[name]			--名称
+	  FROM [hrchannel_data].[dbo].[t_fundtype]
+
+数据表：
+	1-------年度各地社保公积金基数比例表
+	SELECT [area]		--大区(存为ID,关联表t_city)
+		  ,[province]	--省份(存为ID,关联表t_province)
+		  ,[city]		--城市(存为ID,关联表t_area)
+		  ,[fundtype]	--社保类型(存为ID,关联表t_fundtype)
+		  ,[baserange]	--基数下限-基数上限
+		  ,[unit]		--单位(缴费比例)
+		  ,[person]		--个人(缴费比例)
+		  ,[backpay]	--补缴
+		  ,[overduefine]--滞纳金/利息
+		  ,[remark]		--备注
+		  ,[enjoylength]--连续缴纳多长时间可以享受
+		  ,[filetxt]	--政策调整文件
+		  ,[filelink]	--政策调整文件链接
+		  ,[baseadjustmonth]--年度基数调整/执行月（参考）
+		  ,[month]		--基数申报月
+		  ,[basepublihmonth]	--社平基数公布月
+		  ,[year]		--年度
+	  FROM [hrchannel_data].[dbo].[t_fundrate]
+
+	 2------社保医保公积金查询方式表
+	  SELECT [area]			--大区
+		  ,[province]		--省份
+		  ,[city]			--城市
+		  ,[yangljfcertify]	--养老缴费社保凭证
+		  ,[gsjfcertify]	--工伤缴费社保凭证
+		  ,[yiljfcertify]	--医疗缴费社保凭证
+		  ,[syujfcertify]	--生育缴费社保凭证
+		  ,[syejfcertify]	--失业缴费社保凭证
+		  ,[leaveemppro]	--离职员工社保凭证
+		  ,[gjjcertify]		--公积金凭证
+		  ,[certifytime]	--凭证开具时间
+		  ,[searchtxt]		--社保查询网址
+		  ,[searthlink]		--社保查询网址链接
+		  ,[ylbxpersonalsearch]	--养老保险个人账户查询方式
+		  ,[ybsearthtxt]	--医保查询网址
+		  ,[ybsearchlink]	--医保查询网址链接
+		  ,[ybpersonalsearchway]--医保个人查询方式
+		  ,[gjjsearchtxt]	--公积金查询网址
+		  ,[gjjsearchlink]	--公积金查询网址链接
+		  ,[gjjaccountsearchway]	--公积金账户查询费方式
+		  ,[remark]			--备注
+	  FROM [hrchannel_data].[dbo].[t_fundsearch]
+
+	 3------最低工资查询表
+	SELECT [area]			--大区
+		  ,[province]		--省份
+		  ,[city]			--城市
+		  ,[noticedate]		--通知时间
+		  ,[minwage]		--最低工资
+		  ,[minuntotalhour]	--非全小时最低
+		  ,[year]			--年度
+		  ,[filetxt]		--文件链接
+		  ,[filelink]		--文件链接网址
+		  ,[remark]			--备注
+	  FROM [hrchannel_data].[dbo].[t_minwage]
+
+	 4-------生育政策表
+	 SELECT [area]			--大区
+		  ,[province]		--省份
+		  ,[city]			--城市
+		  ,[filetxt]		--文件链接
+		  ,[filelink]		--文件链接网址
+		  ,[enjoyterm]		--享受生育保险待遇的条件
+		  ,[enjoytreat]		--生育保险待遇
+		  ,[enjoystandard]	--生育津贴标准
+		  ,[registrecord]	--生育登记备案
+		  ,[benefitissue]	--生育津贴发放
+		  ,[backpay]		--生育保险补缴
+		  ,[marriageleave]	--婚假
+		  ,[prematernityleave]	--产前假
+		  ,[maternityleave]	--产假
+		  ,[abortionleave]	--流产假
+		  ,[paternityleave]	--陪产假
+		  ,[insuracetime]	--审核、领取生育保险待遇时间
+		  ,[managetype]		--生育待遇办理公司/个人
+		  ,[abortion]		--流产生育津贴
+		  ,[manbenefit]		--享受生育待遇（男方）
+		  ,[other]			--其他
+		  ,[remark]			--备注
+	  FROM [hrchannel_data].[dbo].[t_bearpolicy]
+
+
+	5------失业政策表
+	SELECT [area]			--大区
+		  ,[prrvince]		--省份
+		  ,[city]			--城市
+		  ,[filetxt]		--文件链接
+		  ,[filelink]		--文件链接网址
+		  ,[enjoyecondition]--享受失业保险待遇的条件
+		  ,[leavereason]	--社保规定的额离职/解除的理由
+		  ,[enjoybenefit]	--失业保险待遇
+		  ,[enjoylimit]		--失业进期限标准
+		  ,[registtype]		--失业登记（个人/企业）
+		  ,[regist]			--失业登记
+		  ,[moneyget]		--失业金申领及时限
+		  ,[unlocalget]		--非本市户籍失业金领取
+		  ,[other]			--其他
+	  FROM [hrchannel_data].[dbo].[t_losejobpolicy]
+
+
+	6----异地就医表
+
+	SELECT [area]			--大区
+		  ,[province]		--省份
+		  ,[city]			--城市
+		  ,[removejzmaterial]--材料(异地急诊)
+		  ,[jzbalancetype]	--结算方式(异地急诊)
+		  ,[isremote]		--可否办理异地就医（门诊/住院）
+		  ,[managetype]		--单位办理/个人办理
+		  ,[remotematerial]	--异地就医办理材料
+		  ,[remoteflow]		--异地就医办理流程
+		  ,[removejymaterial]--材料（异地就医）
+		  ,[jybalancetype]	--结算方式（异地就医）
+		  ,[expensetime]	--报销时间
+		  ,[remark]			--备注
+		  ,[filetxt]		--文件链接
+		  ,[filelink]		--文件链接网址
+	  FROM [hrchannel_data].[dbo].[t_remotemedical]
+
+	7----残保金表
+	SELECT [area]			--大区
+		  ,[province]		--省份
+		  ,[city]			--城市
+		  ,[year]			--年度
+		  ,[rate]			--残保金比例
+		  ,[base]			--残保金基数
+		  ,[calculateformula]--计算公式
+		  ,[department]		--归口部门
+		  ,[applydate]		--申报日期
+		  ,[receivedate]	--收取日期
+		  ,[filetxt]		--文件链接
+		  ,[filelink]		--文件链接网址
+		  ,[fee]			--收费
+		  ,[remark]			--备注
+	  FROM [hrchannel_data].[dbo].[t_disbilitymoney]
+
+

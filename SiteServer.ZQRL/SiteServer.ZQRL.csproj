@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{366C86C6-D709-4E8D-B300-33352F814CE3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SiteServer.ZQRL</RootNamespace>
+    <AssemblyName>SiteServer.ZQRL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BaiRong.Controls">
+      <HintPath>..\zqrlnew\bin\BaiRong.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="BaiRong.Core">
+      <HintPath>..\zqrlnew\bin\BaiRong.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>D:\source\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Tasks.v4.0" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\csharpEmppApi.cs" />
+    <Compile Include="Core\CsvObject.cs" />
+    <Compile Include="Core\Data\DataProviderZQRL.cs" />
+    <Compile Include="Core\Data\ICompanyDAO.cs" />
+    <Compile Include="Core\Data\INationalWelfareDAO.cs" />
+    <Compile Include="Core\Data\IPersonDAO.cs" />
+    <Compile Include="Core\Data\ISalaryDAO.cs" />
+    <Compile Include="Core\Data\ISmsDAO.cs" />
+    <Compile Include="Core\Data\IUsersDAO.cs" />
+    <Compile Include="Core\EmailHelper.cs" />
+    <Compile Include="Core\FileUtils.cs" />
+    <Compile Include="Core\PageApp.cs" />
+    <Compile Include="Core\SmsHelper.cs" />
+    <Compile Include="ForegroundPages\Universal.cs" />
+    <Compile Include="ForegroundPages\FLGDeclarePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\FLGSkipPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\AjaxCompanyFindPwd.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\AjaxCompanyRegister.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\AjaxLogin.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\AjaxWindowsService.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\AjaxService.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\AjaxLogout.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\AjaxPersonFindPwd.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\AjaxPersonRegister.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\AjaxSendEmail.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\AjaxSendSMS.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\CompanyBearpolicyInfos.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\CompanyDisbilitymoneyInfos.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\CompanyFindPwd.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\CompanyFundrateInfo.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\CompanyFundsearchInfos.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\CompanyLosejobpolicyInfos.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\CompanyMedicalclaimInfos.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\CompanyMinwageInfos.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\CompanyNationalWelfareInfos.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\CompanyRegister.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\CompanyRemotemedicalInfos.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\CompanyResidenceManageInfos.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\CompanySalaryInfosByPerson.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\CompanySalaryInfosByTime.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\EmployeeInfos.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\LogHelper.cs" />
+    <Compile Include="ForegroundPages\PersonFindPwd.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\PersonInfoEdit.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\PersonMedicalclaimInfos.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\PersonNationalWelfareInfos.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\PersonInfos.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\PersonRegister.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\PersonResidenceManageInfos.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForegroundPages\PersonSalaryInfos.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Model\CompanyInfo.cs" />
+    <Compile Include="Model\NationalWelfareInfo.cs" />
+    <Compile Include="Model\PersonInfo.cs" />
+    <Compile Include="Model\SalaryInfo.cs" />
+    <Compile Include="Model\SmsInfo.cs" />
+    <Compile Include="Model\UsersInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\Data\SqlServer\CompanyDAO.cs" />
+    <Compile Include="Provider\Data\SqlServer\NationalWelfareDAO.cs" />
+    <Compile Include="Provider\Data\SqlServer\PersonDAO.cs" />
+    <Compile Include="Provider\Data\SqlServer\SalaryDAO.cs" />
+    <Compile Include="Provider\Data\SqlServer\SmsDAO.cs" />
+    <Compile Include="Provider\Data\SqlServer\SQLHelper.cs" />
+    <Compile Include="Provider\Data\SqlServer\UsersDAO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="EMPPLib">
+      <Guid>{C777EB8F-8635-434C-B506-490D672F39FA}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="index.htm" />
+    <Content Include="Template\Content\T_师资背景详情.html" />
+    <Content Include="Template\Content\T_招聘详情.html" />
+    <Content Include="Template\Content\T_法律动态xin1105.html" />
+    <Content Include="Template\Content\T_电子杂志正文.html" />
+    <Content Include="Template\Content\T_系统内容模板.html" />
+    <Content Include="Template\Content\T_课程报名.html" />
+    <Content Include="Template\FLGDeclarePage.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Template\T_个人信息查询.aspx" />
+    <Content Include="Template\FLGSkipPage.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Template\T_个人国家福利查询.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Template\T_个人就医理赔查询.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Template\T_个人用户注册.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Template\T_个人薪资查询.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Template\T_个人证件办理情况.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Template\T_介绍类模板.html" />
+    <Content Include="Template\T_企业会员全国福利政策查询.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Template\T_企业会员失业政策查询.aspx" />
+    <Content Include="Template\T_企业会员异地就医查询.aspx" />
+    <Content Include="Template\T_企业会员最低工资查询.aspx" />
+    <Content Include="Template\T_企业会员残保金查询.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Template\T_企业会员生育政策查询.aspx" />
+    <Content Include="Template\T_企业会员社保医保公积金查询.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Template\T_企业员工薪资查询按人员查询.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Template\T_企业员工薪资查询按日期查询.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Template\T_企业国家福利查询.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Template\T_企业就医理赔查询.aspx" />
+    <Content Include="Template\T_企业用户注册.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Template\T_企业证件办理情况.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Template\T_员工信息查询.aspx" />
+    <Content Include="Template\T_定制方案.html" />
+    <Content Include="Template\T_师资背景.html" />
+    <Content Include="Template\T_意见反馈.html" />
+    <Content Include="Template\T_招聘提交.html" />
+    <Content Include="Template\T_招聘提交1031.html" />
+    <Content Include="Template\T_推广课程.html" />
+    <Content Include="Template\T_搜索.html" />
+    <Content Include="Template\T_法律动态.html" />
+    <Content Include="Template\T_法律动态xin1105.html" />
+    <Content Include="Template\T_电子杂志列表.html" />
+    <Content Include="Template\T_电子杂志首页.html" />
+    <Content Include="Template\T_系统栏目模板.html" />
+    <Content Include="Template\T_职位发布.html" />
+    <Content Include="Template\T_订阅会刊.html" />
+    <Content Include="Template\T_评论.html" />
+    <Content Include="Template\T_课程介绍.html" />
+    <Content Include="T_系统首页模板.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

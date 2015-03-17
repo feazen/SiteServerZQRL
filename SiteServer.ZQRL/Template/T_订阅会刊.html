@@ -1,0 +1,42 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{Channel.Top1.Title}_{Stl.SiteName}</title>
+<link rel="stylesheet" type="text/css" href="../css/global.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+<stl:include file="@/include/header.html"></stl:include><!--headerBg end-->
+<stl:include file="@/include/banner.html"></stl:include>
+<div class="container{Channel.Top1.Keywords}Bg">
+    <div class="width1002 marA bgfff clearfix container2">
+        <stl:include file="@/include/left.html"></stl:include><!--leftPart end-->
+        <div class="fr rightPart">
+          <div class="tr position">当前位置：<stl:location separator=" > "></stl:location></div>
+            <div class="ap h3Box"><h3 class="ab f18 normal"><stl:channel type="Title"></stl:channel></h3></div>
+<stl:input inputName="订阅会刊"></stl:input>
+            <!--enterEmailBtns end-->
+            <div class="oh emailExplain">
+              <div class="fl pic"><img src="../images/email.png" width="99" height="78" /></div>
+                <div class="fr oh text">
+                  <p>如果您对我们的HR-Channel感兴趣的话，可以将它介绍给您的亲朋好友，也欢迎您将个人简历等信息资料传递给我们，列入公司专业人才信息库，我们将细心呵护您的职业人生......</p>
+                    <p>如果您的邮件地址发生了变化或者不再希望收到HR-Channel，请及时通知我们。</p>
+                </div>
+            </div><!--emailExplain end-->
+            <ul class="oh proceedingsList">
+              <stl:channels channelIndex="会刊">
+                <li><stl:a target="_blank"><stl:image width="170" height="196"></stl:image></stl:a><p class="text"><stl:a target="_blank"></stl:a></p></li>
+                </stl:channels>
+            </ul><!--proceedingsList end-->
+        </div><!--rightPart end-->     
+    </div><!--container2 end-->
+    <stl:include file="@/include/footer.html"></stl:include><!--footer2 end-->
+</div>
+<!--container2Bg end-->
+<script type="text/javascript" src="../js/base.js"></script>    
+</body>
+</html>

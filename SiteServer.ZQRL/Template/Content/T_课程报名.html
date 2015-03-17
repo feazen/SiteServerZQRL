@@ -1,0 +1,75 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{Content.Title}_{Channel.Title}_{Channel..Top1.Title}_{Stl.SiteName}</title>
+<link rel="stylesheet" type="text/css" href="../../css/global.css" />
+<link rel="stylesheet" type="text/css" href="../../css/main.css" />
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../../js/ScrollPic.js"></script>
+</head>
+
+<body>
+<stl:include file="@/include/header.html"></stl:include><!--headerBg end-->
+<stl:include file="@/include/banner.html"></stl:include>
+<div class="container{Channel.Top1.Keywords}Bg">
+    <div class="width1002 marA bgfff clearfix container2">
+        <stl:include file="@/include/left.html"></stl:include><!--leftPart end-->
+        <div class="fr rightPart">
+          <div class="tr position">当前位置：<stl:location separator=" > "></stl:location></div>
+            <div class="ap h3Box"><h3 class="ab f18 normal">{Channel.UP1.Title}</h3></div>
+            <div class="marA courseBox" style="padding-bottom:115px;">
+              <h4 class="tc f18 normal">{Channel.Title}</h4>
+                <div class="courseTableBox" style="margin-bottom:30px;">
+                    <table width="100%" border="0" class="courseTable courseTable2">
+                      <tr>
+                        <th width="60" align="left">课程名称</th>
+                        <td><stl:content type="Title"></stl:content></td>
+                      </tr>
+                      <tr>
+                        <th align="left">课 时</th>
+                        <td><stl:content type="SubTitle"></stl:content>天</td>
+                      </tr>
+                      <tr>
+                        <th align="left" style="height:95px;" valign="top">课程内容</th>
+                        <td valign="top"><stl:content type="Content"></stl:content></td>
+                      </tr>
+                    </table>
+                </div><!--courseTableBox end-->
+                <table width="100%" class="regiFormTable">
+                  <caption class="f18 color-white bold">报 名 表</caption>
+                  <tr>
+                    <td colspan="2" class="bg1" align="center"><img src="../../images/ico11.png" class="vm" />请留下您的报名信息，以便我们审核后通知您审核结果。我们保证此信息不会外泄！</td>
+                  </tr>
+                  <tr colspan="2"><td style="padding:0;">&nbsp;</td></tr>
+                  <tr>
+                    <th width="168" align="right" valign="top">姓　　名：</th>
+                    <td><input type="text" class="inputText" /></td>
+                  </tr>
+                  <tr>
+                    <th align="right" valign="top">电　　话：</th>
+                    <td><input type="text" class="inputText" /></td>
+                  </tr>
+                  <tr>
+                    <th align="right" valign="top">邮　　件：</th>
+                    <td><input type="text" class="inputText" /></td>
+                  </tr>
+                  <tr>
+                    <th align="right" valign="top">公司名称：</th>
+                    <td><input type="text" class="inputText" /></td>
+                  </tr>
+                  <tr>
+                    <th align="right" valign="top">&nbsp;</th>
+                    <td><input type="button" class="btn btn1" /><input type="button" class="btn btn2" /></td>
+                  </tr>
+                </table><!--regiFormTable end-->
+            </div><!--courseBox end-->  
+        </div><!--rightPart end-->     
+    </div><!--container2 end-->
+    <stl:include file="@/include/footer.html"></stl:include><!--footer2 end-->
+</div><!--container2Bg end-->
+<script type="text/javascript" src="../../js/base.js"></script>    
+</body>
+</html>
+

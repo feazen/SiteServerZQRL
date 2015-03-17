@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{Content.Title}_{Channel.Title}_{Stl.SiteName}</title>
+<link rel="stylesheet" type="text/css" href="../../css/global.css" />
+<link rel="stylesheet" type="text/css" href="../../css/main.css" />
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+<stl:include file="@/include/header.html"></stl:include><!--headerBg end-->
+<stl:include file="@/include/banner.html"></stl:include>
+<div class="container{Channel.Top1.Keywords}Bg">
+    <div class="width1002 marA bgfff clearfix container2">
+        <stl:include file="@/include/left.html"></stl:include><!--leftPart end-->
+        <div class="fr rightPart">
+          <div class="tr position">当前位置：<stl:location separator=" > "></stl:location></div>
+            <div class="ap h3Box"><h3 class="ab f18 normal">{Channel.Title}</h3></div>
+            <div class="newsConBox">
+                <h1 class="f18 tc normal"><stl:content type="Title"></stl:content></h1>
+                <div class="con">
+                
+                <div style="font-family:微软雅黑;line-height:20px;width:90%;height:23px;border:1px solid #85c6e4;color:#464646;font-size:14px;float:left;background-color:#ffffff;padding-top:2px;padding-left:10px;margin-top:20px;">
+    <strong>岗位职责</strong>
+</div>
+<div style="color:#757575;font-family:微软雅黑;font-size:12px;line-height:20px;width:90%;float:left;background-color:#ffffff;margin-top:20px;"><Stl:content type="Responsibility"></Stl:content></div>
+                    <div style="font-family:微软雅黑;line-height:20px;width:90%;height:23px;border:1px solid #85c6e4;color:#464646;font-size:14px;float:left;background-color:#ffffff;padding-top:2px;padding-left:10px;margin-top:20px;">
+    <strong>任职要求</strong>
+</div>
+<div style="color:#757575;font-family:微软雅黑;font-size:12px;line-height:20px;width:90%;float:left;background-color:#ffffff;margin-top:20px;"><Stl:content type="Requirement"></Stl:content></div>
+                </div>
+            </div><!--newsConBox end-->
+        </div><!--rightPart end-->     
+    </div><!--container2 end-->
+    <stl:include file="@/include/footer.html"></stl:include><!--footer2 end-->
+</div><!--container2Bg end-->
+<script type="text/javascript" src="../../js/base.js"></script>    
+</body>
+</html>

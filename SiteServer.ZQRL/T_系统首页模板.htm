@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{Stl.SiteName}</title>
+<link rel="stylesheet" type="text/css" href="css/global.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/tipTip.css" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/ScrollPic.js"></script>
+<script type="text/javascript" src="js/jquery.tipTip.js"></script>
+  <style>
+  .menu li.current a{background:none}  
+  </style>
+</head>
+
+<body>
+<div id="BusinessService"><a name="BusinessService"></a></div>
+<stl:include file="@/include/header.html"></stl:include>
+<!--headerBg end-->
+<!--2014.6.4修改-->
+<div style="position:fixed; top:92px; right:50%; margin-right:-500px; z-index:10;"><img src="images/mm2.png" width="82" height="200" /></div>
+<div class="clear"></div>
+<ul class="ab5 bsMenu2" id="bsMenu2">
+<li><a href="#dLBoxBg"><img src="images/icon01.png" height="27" /><span>客户登录</span></a></li>
+    <li><a href="/channels/170.html"><img src="images/icon02.png" height="27" /><span>订阅会刊</span></a></li>
+    <li><a href="#sBoxBg"><img src="images/icon03.png" height="27" /><span>政策法规<br />查询</span></a></li>
+    <li><a href="#"><img src="images/icon04.png" height="27" /><span>产品推荐</span></a></li>
+    <li><a href="/shoppc/" target="_blank"><img src="images/icon05.png" height="27" /><span>中企商城</span></a></li>
+  
+    
+        
+</ul>
+<!--bsMenu2 end-->
+<!--2014.6.4修改 end-->
+<div class="container">
+    <div class="bSBoxBg">
+        <div class="bSBoxBg2">
+            <div class="width1082 marA ap bSBox">
+                <h3 class="normal color-white"><span class="chinese">中企服务方案</span><span class="english">HR-CHANNEL'S SERVICE SOLUTIONS</span></h3>
+                <ul class="clearfix bsMenu1">
+                  <stl:channels channelIndex="企业服务">
+                  <li>
+                      <div class="circle">
+                            <stl:a>
+                                <span class="icon icon{Channel.ItemIndex}"></span>
+                                <div class="chinese">{Channel.Title}</div>
+                                <div class="english">{Channel.ChannelIndex}</div>
+                            </stl:a>
+                        </div>
+                        <ul>
+                        <stl:channels>
+                            <li><stl:a><!--<span class="num">0{Channel.ItemIndex}</span>-->{Channel.Title}</stl:a></li>
+
+                        </stl:channels>
+                </ul>
+                </li>
+                  </stl:channels></ul><!--bsMenu1 end-->
+                  <div id="information"><a name="information"></a></div>
+            </div><!--bSBox end-->
+        </div><!--bSBoxBg2 end-->
+    </div><!--bSBoxBg end-->
+    <div class="iDBoxBg">
+        <div class="iDBoxBg2">
+          <div class="width1082 marA ap iDBox">
+              <div class="newsBox">
+                  <stl:contents channelIndex="新闻中心" totalNum="1" scope="All" isImage="true">
+                  <dl class="oh">
+                      <dt><stl:a title="{Content.Title}"><stl:content type="Title" wordNum="20"></stl:content></stl:a><img src="images/te.png" class="te" /></dt>
+                        <dd class="pic"><stl:a><stl:image width="141" height="93"></stl:image></stl:a></dd>
+                        <dd class="text"><Stl:content type="Content" isClearTags="true" wordNum="80"></Stl:content></dd>
+                    </dl>
+                    </stl:contents>
+                    <div class="fl list">
+                      <h3>最新通知</h3>
+                        <ul class="oh">
+                        <stl:contents channelIndex="新闻中心" channelName="最新通知" totalNum="4">
+                          <li><p class="fl"><stl:a title="{Content.Title}"><stl:content type="Title" wordNum="12"></stl:content></stl:a></p><span class="fr date"><stl:content type="AddDate" formatString="yyyy-MM-dd"></stl:content></span></li>
+                            </stl:contents>
+                        </ul>
+                    </div><!--list end-->
+                    <div class="fl list">
+                      <h3>政策信息</h3>
+                        <ul class="oh">
+                          <stl:contents channelIndex="新闻中心" channelName="政策信息" totalNum="4">
+                          <li><p class="fl"><stl:a title="{Content.Title}"><stl:content type="Title" wordNum="12"></stl:content></stl:a></p><span class="fr date"><stl:content type="AddDate" formatString="yyyy-MM-dd"></stl:content></span></li>
+                            </stl:contents>
+                        </ul>
+                    </div>  <!--list end-->
+                </div><!--newsBox end-->
+                <ul class="ab oh iDMenu" style="width:1110px;">
+                <stl:channels channelIndex="员工服务" totalNum="1" startNum="2">
+                  <li><stl:a href="/channels/167.html">实用工具</stl:a></li>
+          <li><stl:a href="/channels/168.html">相关下载</stl:a></li>
+          <li><stl:a href="/shoppc/" target="_blank">中企商城</stl:a></li>
+          <li><stl:a href="/channels/170.html">订阅会刊</stl:a></li>
+          <li><stl:a href="http://180.153.108.88/wordpress/?cat=1" target="_blank">党员之家</stl:a></li>
+          
+                  </stl:channels>
+                </ul><!--iDMenu end-->
+                <div id="dLBoxBg"><a name="dLBoxBg"></a></div>
+            </div><!--iDBox end-->
+        </div><!--iDBoxBg2 end-->
+    </div><!--iDBoxBg end-->
+    <div class="dLBoxBg">
+      <div class="dLBoxBg2">
+          <div class="width1082 marA ap dLBox">
+              <div class="ab loginBox" id="loginBox">
+                  <ul class="oh tabTit">
+                      <li class="li1 on"><a href="javascript:;">个人用户</a></li>
+                        <li class="li2"><a href="javascript:;">企业用户</a></li>
+                    </ul>
+                    <div class="tabCon">
+                      <div class="fl left">
+                          <div class="ap inputBox"><!--<label class="ab">用户名</label>--><input id="ipt_NorLoginName" type="text" class="input" placeholder="用户名" /><div class="ab i-name ico"></div></div>
+                            <div class="ap inputBox"><!--<label class="ab">密 码</label>--><input id="ipt_NorPassWord" type="password" class="input" placeholder="密 码" /><div class="ab i-password ico"></div></div>
+                        </div><!--left end-->  
+                        <div class="fr oh right">
+                          <input id="NorLoginBtn" type="button" class="pointer btn" />
+                            <!-- <span class="fl check checked"></span> --><a href="#" class="fr tdu forgetPassword">忘记密码？</a>   
+                        </div><!--right end-->  
+                        <div class="clear"></div>
+                        <div class="explain">
+                          <div class="oh"><h4 class="fl f14 normal">个人自动查询系统使用说明</h4></div>
+                          <p class="em2">个人自助查询系统让我们服务的员工和企业通过本系统能迅速、便捷地了解有关社保和公积金、薪资情况、各类商保保险及赔付进度、各项证件办理的实时状态等相关信息和数据。</p>
+                        </div><!--explain end-->
+                        <h5 class="normal f15 fl">还没有账号？请<a href="/Person/PersonRegister.aspx" class="tdu clickHere">单击此处</a>进行注册</h5> <div  class="fl zcsm"><a href=#>注册说明</a></div>
+                    </div><!--tabCon end-->
+                    <div class="tabCon">
+                      <div class="fl left">
+                          <div class="ap inputBox"><!--<label class="ab">用户名</label>--><input id="ipt_ComLoginName" type="text" class="input" placeholder="用户名" /><div class="ab i-name ico"></div></div>
+                            <div class="ap inputBox"><!--<label class="ab">密 码</label>--><input id="ipt_ComPassWord" type="password" class="input" placeholder="密 码" /><div class="ab i-password ico"></div></div>
+                        </div><!--left end-->  
+                        <div class="fr oh right">
+                          <input id="ComLoginBtn" type="button" class="pointer btn" />
+                           <!-- <span class="fl check checked"></span>-->  <a href="#" class="fr tdu forgetPassword">忘记密码？</a> 
+                        </div><!--right end-->  
+                        <div class="clear"></div>
+                        <div class="explain">
+                          <div class="oh"><h4 class="fl f14 normal">企业自动查询系统使用说明</h4></div>
+                            <p class="em2">企业自助查询系统让我们服务的企业通过本系统能迅速、便捷地了解有关社保和公积金、薪资情况、各类商保保险及赔付进度、各项证件办理的实时状态等相关信息和数据。</p>
+                        </div><!--explain end-->
+                        <h5 class="normal f15 fl">还没有账号？请<a href="/Company/CompanyRegister.aspx" class="tdu clickHere">单击此处</a>进行注册</h5><div  class="fl zcsm"><a href=#>注册说明</a></div>
+                    </div><!--tabCon end-->  
+                </div><!--loginBox end-->
+                <div id="sBoxBg"><a name="sBoxBg"></a></div>
+            </div><!--dLBox end-->
+        </div><!--dLBoxBg2 end-->
+    </div><!--dLBoxBg end-->
+    <div class="sBoxBg">
+      <div class="sBoxBg2">
+
+        <div class="width1082 marA ap sBox">
+              <div class="ab queryBox">
+                  <h3 class="normal">政策法规查询</h3>
+                    <div class="fl pic1"><img src="images/pic01.jpg" width="67" height="65" /></div>
+                    <div class="fr text">
+                      <p>第五届中国人力资源外包国人力资源外评选活最佳客服务满意度</p>
+                        <div class="ap searchBox">
+                          <input type="text" class="inputText" />
+                            <input type="button" class="ab pointer inputBtn" />
+                        </div><!--searchBox end-->
+                    </div><!--text end-->
+                    <div class="clear"></div>
+                    <div class="pic2"><img src="images/pic02.jpg" width="396" height="119" /></div>
+                </div><!--queryBox end-->
+                <div id="hCMBoxBg"><a name="hCMBoxBg"></a></div>
+            </div><!--sBox end-->
+      </div><!--sBoxBg2 end-->
+    </div><!--sBoxBg end-->
+   
+<div class="hCMBoxBg">
+      <div class="hCMBoxBg2">
+        <a href="/shoppc/" target="_blank"> 
+        <div class="width1082 marA hCMBox">
+              <h3 class="normal color-white"><span class="chinese">中企商城</span><span class="english">HR-Channel Mall</span></h3>
+                <p class="color-white f15">中企人力的服务网络覆盖包括省会城市与二级地市在内的100多个城市和地区，可接受客户委托提供全国连锁的“一站式”人力资源服务。</p>
+                <div id="aboutus"><a name="aboutus"></a></div>
+            </div>
+            </a>
+            <!--hCMBox end-->
+      </div><!--hCMBoxBg2 end-->
+    </div><!--hCMBoxBg end-->
+    <div class="aHCBoxBg">
+        <div class="aHCBoxBg2">
+          <div class="width1082 marA aHCBox">
+              <h3 class="normal color-white"><span class="chinese">关于中企</span><span class="english">About HR-Channel</span></h3> 
+<p class="text"><stl:channel type="Content" channelIndex="关于中企" isClearTags="true"></stl:channel></p>
+                <div class="tc f14 detail"><stl:a channelIndex="关于中企">了解详情&nbsp;&nbsp;>></stl:a></div>
+                <ul class="clearfix bsMenu1 aHCMenu1">
+                  <stl:channels channelIndex="关于中企" totalNum="5" layout="None">
+                  <li>
+                      <div class="circle">
+                            <stl:a>
+                                <span class="icon icon{Channel.ItemIndex}"></span>
+                                <div class="chinese">{Channel.Title}</div>
+                                <div class="english">{Channel.ChannelIndex}</div>
+                            </stl:a>
+                        </div>
+                    </li>
+</stl:channels>
+                </ul><!--bsMenu1 end-->
+                <div id="contactus"><a name="contactus"></a></div>
+            </div><!--aHCBox end-->
+        </div><!--aHCBoxBg2 end-->
+    </div><!--aHCBoxBg end-->
+    <div class="cUBoxBg">
+      <div class="cUBoxBg2">
+        <div class="width1082 marA ap cUBox">
+              <h3 class="fr normal color-white"><span class="chinese">联系地址</span></h3>
+                <div class="clear"></div>
+                <div class="fr address">
+                  <p class="f14 bold">上海中企人力资源咨询有限公司</p>
+                    <p>地址：上海市淮海中路2～8号兰生大厦8层 　邮编：200021</p>
+                    <p>电话：021-63191616（总机）　　传真：021-64151122</p>
+                    <p>邮箱 : shanghai@hr-channel.com</p>
+                </div><!--address end-->
+                <div class="clear"></div>
+                <div class="fr address">
+                  <p class="f14 bold">上海中企人力资源咨询有限公司北京子公司</p>
+                    <p>地址：北京市东三环北路19号中青大厦1710室 　邮编：100020</p>
+                    <p>电话：010-59670976、010-59670978、010-59670979（总机）</p>
+                    <p>传真：010-59670975</p>
+  <p>邮箱 :beijing@hr-channel.com</p>
+                </div><!--address end-->
+                <div class="clear"></div>
+                <div class="fr address">
+                  <p class="f14 bold">上海中企人力资源咨询有限公司广州分公司</p>
+                    <p>地址：广州市天河区珠江新城华夏路49号之一津滨腾越大厦南塔713房<br/>邮编：510623</p>
+                    <p>电话：020-38092120 　传真：020-38092121 </p>
+  <p>邮箱 : guangzhou@hr-channel.com</p>
+                </div><!--address end-->
+                <div class="clear"></div>
+             <stl:a channelIndex="中企集团" class="ab zqjtab">中企集团</stl:a>
+                <div class="ab wechat"></div>
+                <ul class="ab cUMenu">
+                  <li><stl:a channelIndex="诚聘英才"><img src="images/ico3.png"  /><span>诚聘英才</span></stl:a></li>
+        
+                  <li ><stl:a channelIndex="意见反馈"><img src="images/ico4.png"/><span>意见反馈</span></stl:a></li>
+                </ul>
+            </div><!--cUBox end-->
+      </div><!--cUBoxBg2 end-->
+    </div><!--cUBoxBg end-->
+</div><!--container end-->
+<div class="footerBoxBg">
+  <div class="space-30"></div>
+  <div class="marA ap scrollBox" id="scrollBox">
+        <div class="ab leftBtn" id="leftBtn"><a href="javascript:;"></a></div>
+        <div class="oh marA scrollCenter" id="scrollCenter">
+            <ul>
+                <stl:contents channelIndex="友情链接" isImage="true">
+                <li><stl:a><stl:image width="135" height="65"></stl:image></stl:a></li>
+           </stl:contents>
+           <stl:contents channelIndex="友情链接" totalNum="1" isImage="true">
+                <li><stl:a><stl:image width="135" height="65"></stl:image></stl:a></li>
+           </stl:contents>
+            </ul>
+        </div>
+        <div class="ab rightBtn" id="rightBtn"><a href="javascript:;"></a></div>    
+    </div><!--scrollBox end-->
+    <div class="width1082 marA oh footer">
+      <div class="fl left">
+           <div class="logo"><img src="images/logo2.png" width="168" height="38" /></div>
+            <p>全方位人力资源解决方案提供商<br />
+              人事服务 猎头服务  商务咨询  企业培训  法律咨询<br />
+              热线: 400 089 9090     电话: (86)-21-63191616<br />
+              传真: (86)-21-64151122   邮箱: shanghai@hr-channel.com<br />
+            Copyright@2001-2015 HR-Channel.com All Rights Reserved.</p>
+        </div>
+        <stl:channels topLevel="0" groupChannel="底部导航">
+        <stl:if testType="ItemIndex" testOperate="In" testValue="1">
+        <stl:successTemplate>
+        <dl class="fl" style="width:130px;">
+          <dt>{Channel.Title}</dt>
+            <stl:channels groupChannelNot="不显示在底部导航">
+            <dd><stl:a></stl:a></dd>
+            </stl:channels>
+        </dl>
+        </stl:successTemplate>
+        <stl:failureTemplate>
+        <dl class="fl">
+          <dt>{Channel.Title}</dt>
+            <stl:channels groupChannelNot="不显示在底部导航">
+            <dd><stl:a></stl:a></dd>
+            </stl:channels>
+        </dl>
+        </stl:failureTemplate>
+        </stl:if>
+  </stl:channels>
+    </div><!--footer end-->
+</div><!--footerBoxBg end-->
+<a class="goTop" id="goTop" href="javascript:void(0)">top</a>
+<a class="onlineConsultation" href="javascript:void(0)">在线咨询</a>
+<script type="text/javascript" src="js/base.js"></script>   
+<script type="text/javascript" src="js/Login.js"></script> 
+</body>
+</html>

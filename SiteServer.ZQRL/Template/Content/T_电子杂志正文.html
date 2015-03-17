@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{Content.Title}_{Channel.Title}_{Channel.Top2.Title}_{Stl.SiteName}</title>
+<link rel="stylesheet" type="text/css" href="/css/global.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+<stl:include file="@/include/header.html"></stl:include>
+<div class="container{Channel.Top1.Keywords}Bg">
+	<div class="width1028 marA eZineTopBg2"></div><!--eZineTopBg2 end-->
+    <div class="width1028 marA clearfix eZineCenterBg2">
+        <div class="fl ap leftPart">
+        	<h2 class="ab width100 tc f18">本期热点导航</h2>
+            <ul class="ab leftMenu">
+            <stl:channels topLevel="2">
+            <stl:if testType="UpChannelOrSelf">
+            <stl:successTemplate>
+                <li class="current"><stl:a></stl:a></li>
+                </stl:successTemplate>
+                <stl:failureTemplate>
+                <li><stl:a></stl:a></li>
+                </stl:failureTemplate>
+                </stl:if>
+                </stl:channels>
+            </ul>
+        </div><!--leftPart end-->
+        <div class="fr rightPart">
+        	<div class="tr position">当前位置：<stl:location separator=" > "></stl:location></div>
+            <div class="ap h3Box"><h3 class="ab f18 normal">{Channel.Title}</h3></div>
+            <div class="cptjBox">
+            <stl:contents>
+            	<h4 class="f18 normal"><stl:a></stl:a></h4>
+                </stl:contents>
+                <div class="h4ConBox">
+                	<h5 class="f16 tc color-white"><stl:content type="Title"></stl:content></h5>
+                    <stl:content type="Content"></stl:content>
+                </div><!--h4ConBox end-->
+            </div><!--cptjBox end-->
+        </div><!--rightPart end-->	   
+    </div><!--eZineCenterBg end-->
+    <div class="width1028 marA eZineBottomBg2"></div><!--eZineBottomBg end-->
+    <div class="width1002 marA oh footer2" style="padding:25px 0; position:relative; overflow:visible;"><!--2014.7.15 修改-->
+    	<stl:include file="@/include/MagazineBottom"></stl:include><!--left end-->
+    </div><!--footer2 end-->
+</div><!--container4Bg end-->
+<script type="text/javascript" src="/js/base.js"></script>    
+</body>
+</html>

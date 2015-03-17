@@ -1,0 +1,63 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{Channel.Title}_{Channel.Top1.Title}{Stl.SiteName}</title>
+<link rel="stylesheet" type="text/css" href="../../css/global.css" />
+<link rel="stylesheet" type="text/css" href="../../css/main.css" />
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+<stl:include file="@/include/header.html"></stl:include><!--headerBg end-->
+<stl:include file="@/include/banner.html"></stl:include>
+<div class="container{Channel.Top1.Keywords}Bg">
+    <div class="width1002 marA bgfff clearfix container2">
+        <stl:include file="@/include/left.html"></stl:include><!--leftPart end-->
+        <div class="fr rightPart">
+          <div class="tr position">当前位置：<stl:location separator=" > "></stl:location></div>
+            <div class="ap h3Box"><h3 class="ab f18 normal">{Channel.Title}</h3></div>
+            <div class="oh teacherDetail">
+              <div class="fl photo"><stl:image width="246" height="163"></stl:image></div>
+                <div class="fr text">
+                  <div class="name"><stl:content type="Title"></stl:content></div>
+                    <ul class="introduce">
+                      <stl:content type="Summary"></stl:content>
+                    </ul>
+                </div>  
+            </div><!--teacherDetail end-->
+            <ul class="teacherDetailList">
+              <li>
+                  <h4 class="oh"><img src="../../images/ico01.jpg" class="fl" /><span class="fl">培训、工作经历：</span></h4>
+                    <div class="text">
+                       <stl:content type="SubTitle"></stl:content>
+                    </div>
+                </li>
+                <li>
+                  <h4 class="oh"><img src="../../images/ico02.jpg" class="fl" /><span class="fl">课程专长：</span></h4>
+                    <div class="text">
+                       <stl:content type="Content"></stl:content>
+                    </div>
+                </li>
+                <li>
+                  <h4 class="oh"><img src="../../images/ico03.jpg" class="fl" /><span class="fl">授课风格：</span></h4>
+                    <div class="text">
+                      <stl:content type="Author"></stl:content>
+                    </div>
+                </li>
+                <li>
+                  <h4 class="oh"><img src="../../images/ico04.jpg" class="fl" /><span class="fl">视频推荐：</span></h4>
+                    <div class="oh video">
+                        <div class="fl"><stl:player width="294" height="194"></stl:player></div>
+                        
+                    </div>
+                </li>
+            </ul><!--teacherDetailList end-->  
+        </div><!--rightPart end-->     
+    </div><!--container2 end-->
+    <stl:include file="@/include/footer.html"></stl:include><!--footer2 end-->
+</div><!--container2Bg end-->
+<script type="text/javascript" src="../../js/base.js"></script>    
+</body>
+</html>

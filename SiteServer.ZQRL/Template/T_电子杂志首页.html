@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{Channel.Top2.Title}_{Stl.SiteName}</title>
+<link rel="stylesheet" type="text/css" href="/css/global.css" />
+<link rel="stylesheet" type="text/css" href="/css/main.css" />
+<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+<stl:include file="@/include/header.html"></stl:include>
+<div class="container{Channel.Top1.Keywords}Bg">
+    <div class="width1028 marA eZineTopBg"></div><!--eZineTopBg end-->
+    <div class="width1028 marA clearfix eZineCenterBg">
+    	<div class="fl ap leftPart2">
+        	<div class="position2">当前位置：<stl:a topLevel="0">首页</stl:a> > <stl:a topLevel="1"><stl:channel type="Title" topLevel="1"></stl:channel></stl:a> > <stl:a topLevel="2" class="current"><stl:channel type="Title" topLevel="2"></stl:channel></stl:a></div>
+            <div class="eZineBanner"><stl:channel topLevel="2" type="TopBan" width="661" height="196"></stl:channel></div>
+            <div class="h2"><h2 class="tc f18 normal bgfff">编者寄语</h2></div>
+            <div class="f14 h2Con"><p><stl:channel topLevel="2" type="Message"></stl:channel></p></div>
+            <h2 class="f16 normal marB9">本期热点导航</h2>
+            <stl:channels topLevel="2" groupChannel="本期热点导航">
+            <div class="fl oh oneH3Box">
+            	<h3 class="f14 normal">{Channel.Title}</h3>
+                <ul class="list">
+                <stl:contents totalNum="7" layout="None">
+                	<li><stl:a></stl:a></li>
+                 </stl:contents>
+                </ul>
+            </div><!--oneH3Box end-->
+            </stl:channels>
+            <div class="clear"></div>
+            <div class="ad marB10"><stl:channel topLevel="2" type="BottomBan1" width="668" height="99"></stl:channel> </div>
+            <div class="ad"><stl:channel topLevel="2" type="BottomBan2" width="668" height="96"></stl:channel></div>
+        </div><!--leftPart2 end-->
+        <div class="fr ap rightPart2">
+        	<h3 class="f16 normal">今日热点</h3>
+            <div class="oneH4Box">
+            	<h4 class="f14">最新通知</h4>
+                <ul class="list">
+                	<stl:contents totalNum="7" channelIndex="最新通知" layout="None">
+                	<li><stl:a></stl:a></li>
+                 </stl:contents>
+                </ul>
+            </div><!--oneH4Box end-->
+            <div class="oneH4Box">
+            	<h4 class="f14">政策信息</h4>
+                <ul class="list">
+                	<stl:contents totalNum="7" channelIndex="政策信息" layout="None">
+                	<li><stl:a></stl:a></li>
+                 </stl:contents>
+                </ul>
+            </div><!--oneH4Box end-->
+            <!--<div class="oneH4Box">
+            	<h4 class="f14">信息速递</h4>
+                <ul class="list">
+                	<stl:contents totalNum="7" channelIndex="新闻中心" scope="All" layout="None">
+                	<li><stl:a></stl:a></li>
+                 </stl:contents>
+                </ul>
+            </div>--><!--oneH4Box end-->
+            <div class="space-30"></div>
+            <div class="space-30"></div>
+            <div class="space-30"></div>
+            <div class="space-10"></div>
+            <div class="tc ad"><stl:channel topLevel="1" type="RightBan" width="219" height="75"></stl:channel></div>
+            <stl:select channelIndex="会刊" isChannel="true" class="select"></stl:select>
+        </div><!--rightPart2 end-->
+    </div><!--eZineCenterBg end-->
+    <div class="width1028 marA eZineBottomBg"></div><!--eZineBottomBg end-->
+    <div class="width1002 marA oh footer2" style="padding:25px 0; position:relative; overflow:visible;background:url(../images/footer2Bg.png) no-repeat left bottom;"><!--2014.7.15 修改-->
+    	<stl:include file="@/include/MagazineBottom"></stl:include><!--left end-->
+    </div><!--footer2 end-->
+</div><!--container4Bg end-->
+
+<script type="text/javascript" src="/js/base.js"></script>    
+</body>
+</html>

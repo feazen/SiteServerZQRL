@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{Content.Title}_{Channel.Title}_{Stl.SiteName}</title>
+<link rel="stylesheet" type="text/css" href="../../css/global.css" />
+<link rel="stylesheet" type="text/css" href="../../css/main.css" />
+<script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+<stl:include file="@/include/header.html"></stl:include><!--headerBg end-->
+<stl:include file="@/include/banner.html"></stl:include>
+<div class="container{Channel.Top1.Keywords}Bg">
+    <div class="width1002 marA bgfff clearfix container2">
+        <stl:include file="@/include/left.html"></stl:include><!--leftPart end-->
+        <div class="fr rightPart">
+          <div class="tr position">当前位置：<stl:location separator=" > "></stl:location></div>
+            <div class="ap h3Box"><h3 class="ab f18 normal">{Channel.Title}</h3></div>
+            <div class="newsConBox">
+                <h1 class="f18 tc normal"><stl:content type="Title"></stl:content></h1>
+                <div class="tc releaseTime"><stl:content type="Source" leftText="来源："></stl:content>   <stl:content type="Author" leftText="作者："></stl:content>　　发布时间：<stl:content type="AddDate" formatString="yyyy-MM-dd"></stl:content></div>
+                <div class="con">
+                    <stl:content type="Content"></stl:content>
+                </div>
+            </div><!--newsConBox end-->
+        </div><!--rightPart end-->     
+    </div><!--container2 end-->
+    <stl:include file="@/include/footer.html"></stl:include><!--footer2 end-->
+</div><!--container2Bg end-->
+<script type="text/javascript" src="../../js/base.js"></script>    
+</body>
+</html>

@@ -1,0 +1,96 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{Channel.Title}_{Channel.Top1.Title}{Stl.SiteName}</title>
+<link rel="stylesheet" type="text/css" href="../css/global.css" />
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+<stl:include file="@/include/header.html"></stl:include><!--headerBg end-->
+<stl:include file="@/include/banner.html"></stl:include>
+<div class="container{Channel.Top1.Keywords}Bg">
+    <div class="width1002 marA bgfff clearfix container2">
+        <stl:include file="@/include/left.html"></stl:include><!--leftPart end-->
+        <div class="fr rightPart">
+          <div class="tr position">当前位置：<stl:location separator=" >"></stl:location></div>
+            <div class="ap h3Box"><h3 class="ab f18 normal">{Channel.Title}</h3></div>
+            <ul class="tgkcList">
+            <stl:pageContents pageNum="4">
+            <stl:itemTemplate type="SelectedItem" selected="1,3">
+              <li>
+                  <div class="fl pic"><stl:image width="264" height="175"></stl:image></div>
+                    <div class="fr oh text">
+                      <stl:content type="Content"></stl:content>
+                        <stl:a class="fr encroll">报 名</stl:a>
+                    </div>
+                </li>
+                </stl:itemTemplate>
+                <stl:itemTemplate type="Item">
+                <li>
+                  <div class="fr pic"><stl:image width="264" height="175"></stl:image></div>
+                    <div class="fl oh text">
+                      <stl:content type="Content"></stl:content>
+                        <stl:a class="fr encroll">报 名</stl:a>
+                    </div>
+                </li>
+                </stl:itemTemplate>
+                </stl:pageContents>
+                
+                
+            </ul><!--tgkcList end-->
+             <stl:pageItems>
+            <div class="oh page">
+                    <stl:pageItem type="PageNavigation" listNum="8">  
+        <stl:successTemplate><a href="{Current.Url}" class="fl">{Current.Num}</a></stl:successTemplate>  
+        <stl:failureTemplate><a href="javascript:;" class="fl current">{Current.Num}</a></stl:failureTemplate>  
+      </stl:pageItem>  
+                    <stl:pageItem type="NextPage">  
+          <stl:successTemplate><a href="{Current.Url}" class="fl down"></a></stl:successTemplate>  
+          <stl:failureTemplate><a href="javascript:;" class="fl down"></a></stl:failureTemplate>  
+      </stl:pageItem> 
+                    <span class="fl span2">跳转到：</span>
+                    <input type="text" class="fl" />
+                    <a class="fl go" href="javascript:;" onclick="jumpPage(document.getElementById('jumpPageBox'))" ></a>
+                    <script type="text/javascript"> 
+function jumpPage(input){
+   var url = '{Channel.NavigationUrl}';      // var声明  url 链接 变量 赋予 栏目页地址
+    if (url.indexOf('_') != -1)        //  条件判断  当条件成立时，执行若干块代码中的一个
+  {
+    url = url.substr(0, url.indexOf('_'));
+  }else if (url.indexOf('.') != -1)
+  {
+    
+    url = url.substr(0, url.indexOf('.'));
+  }
+  
+  var pageIndex = parseInt(input.value);
+  if (!pageIndex){
+    pageIndex =1;
+  }
+  var pages = {PageItem.TotalPageNum};
+  if (pageIndex > pages){
+    pageIndex = pages;
+  }
+ 
+  if(pageIndex == 1){
+    url = url + '.shtml';
+  }else{
+    url = url + "_" + pageIndex + '.shtml';
+  }
+ 
+   document.location=url;
+}
+</script>
+                </div>
+                </stl:pageItems><!--page end-->
+        </div><!--rightPart end-->     
+    </div><!--container2 end-->
+    <stl:include file="@/include/footer.html"></stl:include><!--footer2 end-->
+</div><!--container2Bg end-->
+<script type="text/javascript" src="../js/base.js"></script>    
+</body>
+</html>
