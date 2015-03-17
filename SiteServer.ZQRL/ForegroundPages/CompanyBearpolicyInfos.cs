@@ -67,6 +67,9 @@ namespace SiteServer.ZQRL.ForegroundPages
 
             if (!IsPostBack)
             {
+                YearTime = DateTime.Now.Year.ToString();
+                lblYearTime.Text = YearTime + "年";
+
                 if (Request["YearTime"] != null && Request["YearTime"] != "")
                 {
                     YearTime = Request["YearTime"];
